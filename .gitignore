@@ -119,3 +119,6 @@ Temporary Items
 
 # RAW TEXT
 *.txt
+
+#OUTPUT JSON
+*.JSON
