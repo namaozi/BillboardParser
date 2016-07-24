@@ -6,6 +6,7 @@ import json
 
 import functions as func
 
+# ver.8(16/07/24) ナインスコードを4和音に省略
 # ver.7 1つもコードが入っていないrepeatSegmentsを排除しました
 # ver.6 chorusSegmentsを消してrepeatSegmentsに統合しました。(JSONs4)
 ###BPMを直すのが無理っぽいので諦めました。。。フラグ制御、可読性無さ過ぎ。
@@ -19,7 +20,8 @@ import functions as func
 
 NATURAL = ["A", "B", "C", "D", "E", "F", "G"]
 SHORTHAND = ["maj", "min", "dim", "aug", "maj7", "min7", "7", "dim7", "hdim7", "minmaj7", "maj6", "min6", "9", "maj9", "min9", "sus4"]
-CHORD_TABLE = {"maj":("maj", ""), "min":("min", "m"), "dim":("dim","dim", "o"), "aug":("aug", "aug"), "maj7":("maj7", "M7", "△7"), "min7":("min7", "m7"), "7":("7", "7"), "dim7":("dim7", "dim", "o"), "hdim7":("hdim7", "m7b5"), "minmaj7":("minmaj7", "mM7"), "maj6":("maj6", "6"), "min6":("min6", "m6"), "9":("9", "9"), "maj9":("maj9", "M9"), "min9":("min9", "m9"), "sus4":("sus4", "sus4"), "sus2":("sus2", "add9"), "5":("5", "5")}
+#ナインスコードをセブンスコードに変更しました
+CHORD_TABLE = {"maj":("maj", ""), "min":("min", "m"), "dim":("dim","dim", "o"), "aug":("aug", "aug"), "maj7":("maj7", "M7", "△7"), "min7":("min7", "m7"), "7":("7", "7"), "dim7":("dim7", "dim", "o"), "hdim7":("hdim7", "m7b5"), "minmaj7":("minmaj7", "mM7"), "maj6":("maj6", "6"), "min6":("min6", "m6"), "9":("9", "7"), "maj9":("maj9", "add9"), "min9":("min9", "m7"), "sus4":("sus4", "sus4"), "sus2":("sus2", "add9"), "5":("5", "5")}
 SHARP_TO_FLAT = {"C#":"Db", "D#":"Eb", "F#":"Gb", "G#":"Ab", "A#":"Bb", "E#":"f", "B#":"C"}
 
 # メイン関数
